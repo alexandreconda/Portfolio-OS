@@ -1,0 +1,13 @@
+{
+    "name": "alexandreconda/portfolio-os",
+    "type": "application",
+    "require": {
+        "jelix/jelix": "dev-jelix-1.7.x"
+    },
+    "minimum-stability": "stable",
+    "config": {
+        "allow-plugins": {
+            "jelix/composer-module-setup": true
+        }
+    }
+}

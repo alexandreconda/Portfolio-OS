@@ -1,0 +1,6 @@
+/.project
+/.buildpath
+/vendor/
+/source/var/config/localconfig.ini.php
+/source/var/config/profiles.ini.php
+

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module xmlns="http://jelix.org/ns/module/1.0">
+    <info id="source@source" name="source" createdate="2023-02-09">
+        <version date="2023-02-09">0.1pre</version>
+        <label lang="en_US">source</label>
+        <description lang="en_US" />
+        <license URL="">All rights reserved</license>
+        <copyright>2023 source</copyright>
+        <creator name="source" email=""/>
+        <!--<contributor name="hisname" email="hisemail@yoursite.undefined"/>-->
+        <homepageURL></homepageURL>
+    </info>
+    <dependencies>
+        <jelix minversion="1.7.14-pre" maxversion="1.7.*"/>
+    </dependencies>
+    <autoload>
+        <!--<psr4 namespace="\My\Namespace\source" dir="./"/>-->
+    </autoload>
+</module>
