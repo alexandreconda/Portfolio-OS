@@ -3,9 +3,9 @@
 
 [jdb]
 ; name of the default profile to use for any connection
-default="source"
+default="portfolio"
 
-[jdb:source]
+[jdb:portfolio]
 ; the driver name : mysql, pgsql, sqlite3...
 driver=sqlite3
 

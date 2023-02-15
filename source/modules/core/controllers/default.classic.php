@@ -1,7 +1,7 @@
 <?php
 /**
 * @package   source
-* @subpackage source
+* @subpackage core
 * @author    source
 * @copyright 2023 source
 * @link      
@@ -14,11 +14,12 @@ class defaultCtrl extends jController {
     */
     function index() {
         $rep = $this->getResponse('html');
-
-        // this is a call for the 'welcome' zone after creating a new application
-        // remove this line !
-        $rep->body->assignZone('MAIN', 'jelix~check_install');
-
+        
+        $rep->title = 'Portfolio OS';
+        $rep->bodyTpl = 'core~main';
+        $rep->body->assignZone('MAIN', 'page');
+        
         return $rep;
     }
 }
+

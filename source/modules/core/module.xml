@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module xmlns="http://jelix.org/ns/module/1.0">
-    <info id="source@source" name="source" createdate="2023-02-09">
-        <version date="2023-02-09">0.1pre</version>
-        <label lang="en_US">source</label>
+    <info id="core@source" name="core" createdate="2023-02-14">
+        <version date="2023-02-14">0.1pre</version>
+        <label lang="en_US">core</label>
         <description lang="en_US" />
         <license URL="">All rights reserved</license>
         <copyright>2023 source</copyright>
@@ -14,6 +14,6 @@
         <jelix minversion="1.7.14-pre" maxversion="1.7.*"/>
     </dependencies>
     <autoload>
-        <!--<psr4 namespace="\My\Namespace\source" dir="./"/>-->
+        <!--<psr4 namespace="\My\Namespace\core" dir="./"/>-->
     </autoload>
 </module>

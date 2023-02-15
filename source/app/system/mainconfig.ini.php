@@ -9,7 +9,7 @@ charset=UTF-8
 ; see http://www.php.net/manual/en/timezones.php for supported values
 timeZone="Europe/Paris"
 
-theme=default
+theme=xp
 
 ; default domain name to use with jfullurl for example.
 ; Let it empty to use $_SERVER['SERVER_NAME'] value instead.
@@ -24,7 +24,7 @@ jauthdb.enabled=off
 
 
 jelix.installparam[wwwfiles]=copy
-source.enabled=on
+core.enabled=on
 [coordplugins]
 ;name = file_ini_name or var:file_ini_name or 1
 

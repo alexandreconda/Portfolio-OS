@@ -1,7 +1,7 @@
 <?php
 /**
 * @package   source
-* @subpackage source
+* @subpackage core
 * @author    source
 * @copyright 2023 source
 * @link      
@@ -9,7 +9,7 @@
 */
 
 
-class sourceModuleConfigurator extends \Jelix\Installer\Module\Configurator {
+class coreModuleConfigurator extends \Jelix\Installer\Module\Configurator {
 
     public function getDefaultParameters() {
         return array();
