@@ -3,5 +3,7 @@
     <entrypoint type="classic" name="index" default="true">
         <url pathinfo="/" module="core" action="default:index">
         </url>
+        <url pathinfo="/core/window/ouvrirFenetre" module="core" action="window:ouvrirFenetre">
+        </url>
     </entrypoint>
 </urls>

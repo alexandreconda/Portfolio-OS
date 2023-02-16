@@ -7,39 +7,34 @@
   </div>
 {/foreach}
 
-
-
-
-  
-    <div class="fenetre-modale hidden">
-		  <div class="fenetre-modale-header"> 
-		      <div class="fenetre-modale-header-titre">Bienvenue</div>
-		      <img class="fenetre-modale-header-icone fenetre-modale-header-icone-close" src={$j_themepath . "img/close.svg"} />
-		  </div>
-		  <div class="fenetre-modale-contenu">En cours de développement (1).</div>
-    </div>
-    
-     <div class="fenetre-modale hidden">
-          <div class="fenetre-modale-header"> 
-              <div class="fenetre-modale-header-titre">Bienvenue</div>
-              <img class="fenetre-modale-header-icone fenetre-modale-header-icone-close" src={$j_themepath . "img/close.svg"} />
-          </div>
-          <div class="fenetre-modale-contenu">En cours de développement (2).</div>
-    </div>
-  
+<div id=fenetres>
+</div>
 
 <script type="text/javascript">
+var urlAjaxGet = "{jurl 'core~window:ouvrirFenetre'}"
 {literal}
 
-    jQuery('.fenetre-modale').draggable();
-    
-    jQuery('body').on('click', '.fenetre-modale-header-icone-close', function() {
-        jQuery(this).parents('.fenetre-modale').remove();
-    });
+    jQuery('#window').selectable({filter: ".icon"});
     
     jQuery('.icon').dblclick(function() {
-        var jTitre = jQuery(this).find('.label').html();
-        jQuery('.fenetre-modale-header-titre').html(jTitre);
+        var titre = jQuery(this).children(".label").text();
+    
+        jQuery.ajax
+        (
+            urlAjaxGet,
+            {
+                method: "GET",
+                data: {titre: titre},
+                complete: function(jqXHR, textStatus) 
+                {
+                    jQuery("#fenetres").append(jqXHR.responseText);
+                }
+            }
+        );
+    
+        
+//         var jTitre = jQuery(this).find('.label').html();
+//         jQuery('.fenetre-header-titre').html(jTitre);
     });
 
 {/literal}
