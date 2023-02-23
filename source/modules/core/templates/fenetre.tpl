@@ -4,15 +4,22 @@
               <img class="fenetre-header-icone fenetre-header-icone-close" src={$j_themepath . "img/close.svg"} />
           </div>
           <div class="fenetre-contenu">
-            Ca marche !
+            {$contenu}
           </div>
 
 <script type="text/javascript">
 {literal}
+    var jFenetreCourante = jQuery('.fenetre').eq(-1);
+    var jFenetrePrecedente = jQuery('.fenetre').eq(-2);
 
-    jQuery('.fenetre').draggable();
+    if (jFenetrePrecedente.length !== 0)
+    {
+        jFenetreCourante.offset({left: jFenetrePrecedente.offset().left +30, top: jFenetrePrecedente.offset().top +30});
+    }
+
+    jFenetreCourante.draggable();
     
-    jQuery('.fenetre').on('click', '.fenetre-header-icone-close', function() {
+    jFenetreCourante.on('click', '.fenetre-header-icone-close', function() {
         jQuery(this).parents('.fenetre').remove();
     });
 
