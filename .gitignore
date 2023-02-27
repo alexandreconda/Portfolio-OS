@@ -4,3 +4,4 @@
 /source/var/config/localconfig.ini.php
 /source/var/config/profiles.ini.php
 /.settings
+/.gitignore.save
