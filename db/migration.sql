@@ -24,4 +24,37 @@ INSERT INTO core.fichier(nom, repertoire) VALUES ('racine', TRUE);
 ALTER TABLE core.fichier
 ADD CONSTRAINT check_not_recursive CHECK (NOT(id_parent = ANY (ids_enfants::int[])))
 
+-- On évite les cycles dans l'arborescence des fichiers
+CREATE OR REPLACE FUNCTION detecter_cycle()
+  RETURNS TRIGGER
+  LANGUAGE plpgsql AS
+$func$
+BEGIN
+  IF EXISTS (
+      WITH RECURSIVE liste_parents(parent) AS (
+         -- On récupère les ascendants du nouveau fichier pour voir si l'un d'entre eux
+         -- n'est pas le fichier en question
+         SELECT f.id_parent
+         FROM core.fichier AS f
+         WHERE f.id = NEW.id_parent
+       UNION ALL
+         SELECT f.id_parent
+         FROM core.fichier AS f,  liste_parents as lp
+         WHERE f.id = lp.parent
+       ) SELECT * FROM liste_parents WHERE liste_parents.parent = NEW.id LIMIT 1
+  )
+  THEN
+    RAISE EXCEPTION 'Boucle détectée';
+  ELSE
+    RETURN NEW;
+  END IF;
+END
+$func$;
+
+DROP TRIGGER IF EXISTS detecter_cycle_arborescence ON core.fichier;
+
+CREATE CONSTRAINT TRIGGER detecter_cycle_arborescence
+AFTER INSERT OR UPDATE ON core.fichier
+FOR EACH ROW EXECUTE PROCEDURE detecter_cycle();
+
 COMMIT ;

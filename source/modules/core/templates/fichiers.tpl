@@ -1,9 +1,11 @@
+<div class="fichiers">
 {foreach $fichiers as $fichier}
   <div class="fichier" data-id={$fichier['id']}>
     <img src="{$j_themepath . "img/" . $fichier['img']}">
     <div class="label">{$fichier['nom']}</div>
   </div>
 {/foreach}
+</div>
 
 <script type="text/javascript">
 var urlAjaxGet = "{jurl 'core~fenetre:ouvrirFenetre'}"
