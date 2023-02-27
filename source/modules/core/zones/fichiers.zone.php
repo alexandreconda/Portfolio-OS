@@ -14,15 +14,15 @@ class fichiersZone extends jZone {
        }
 
        $query = $db->query("
-            SELECT id, nom
+            SELECT id, nom, img
             FROM core.fichier
             WHERE id IN (" . $ids . ")
-            ORDER BY nom
+            ORDER BY repertoire DESC, nom
         ");
        
        $fichiers = array();
        while ($record = $query->fetch()) {
-           $fichiers[] = array('id' => $record->id, 'nom' => $record->nom, 'img' => 'computer.svg');
+           $fichiers[] = array('id' => $record->id, 'nom' => $record->nom, 'img' => $record->img);
        }
 
        $this->_tpl->assign('fichiers', $fichiers);
