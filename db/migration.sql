@@ -71,23 +71,29 @@ FOR EACH ROW EXECUTE PROCEDURE detecter_cycle();
 
 ALTER TABLE core.fichier ADD COLUMN img TEXT;
 
--- On attribue une icone par défaut à chaque fichier
-CREATE OR REPLACE FUNCTION icone_defaut()
+-- On attribue des valeurs par défaut à chaque fichier
+CREATE OR REPLACE FUNCTION default_init()
   RETURNS TRIGGER
   LANGUAGE plpgsql AS
 $func$
 BEGIN
 	UPDATE core.fichier SET img = 'directory.png' WHERE img IS NULL AND repertoire IS TRUE;
 	UPDATE core.fichier SET img = 'file.png' WHERE img IS NULL AND repertoire IS NOT TRUE;
+	UPDATE core.fichier SET ids_enfants = ARRAY (SELECT DISTINCT elt FROM unnest(array_append(ids_enfants, NEW.id)) AS ids(elt)) WHERE id = NEW.id_parent;
+	
+	IF (TG_OP = 'UPDATE') THEN
+		UPDATE core.fichier SET ids_enfants = array_remove(ids_enfants, OLD.id) WHERE id = OLD.id_parent AND OLD.id_parent <> NEW.id_parent;
+	END IF;
+	
 	RETURN NEW;
 END
 $func$;
 
-DROP TRIGGER IF EXISTS definir_icone_defaut ON core.fichier;
+DROP TRIGGER IF EXISTS default_init_proc ON core.fichier;
 
-CREATE CONSTRAINT TRIGGER definir_icone_defaut
+CREATE CONSTRAINT TRIGGER default_init_proc
 AFTER INSERT OR UPDATE ON core.fichier
-FOR EACH ROW EXECUTE PROCEDURE icone_defaut();
+FOR EACH ROW EXECUTE PROCEDURE default_init();
 
 
 ALTER TABLE core.fichier ALTER COLUMN repertoire SET NOT NULL;
