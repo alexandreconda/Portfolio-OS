@@ -16,6 +16,11 @@ CREATE TABLE core.fichier
 );
 
 
+
+-----------------------------------------------------------
+
+
+
 -- Seul le repertoire racine n'a pas de parent
 CREATE UNIQUE INDEX i_fichier ON core.fichier ((id_parent IS NULL)) WHERE id_parent IS NULL;
 INSERT INTO core.fichier(nom, repertoire) VALUES ('racine', TRUE);
@@ -56,5 +61,35 @@ DROP TRIGGER IF EXISTS detecter_cycle_arborescence ON core.fichier;
 CREATE CONSTRAINT TRIGGER detecter_cycle_arborescence
 AFTER INSERT OR UPDATE ON core.fichier
 FOR EACH ROW EXECUTE PROCEDURE detecter_cycle();
+
+
+
+-----------------------------------------------------------
+
+
+
+
+ALTER TABLE core.fichier ADD COLUMN img TEXT;
+
+-- On attribue une icone par défaut à chaque fichier
+CREATE OR REPLACE FUNCTION icone_defaut()
+  RETURNS TRIGGER
+  LANGUAGE plpgsql AS
+$func$
+BEGIN
+	UPDATE core.fichier SET img = 'directory.png' WHERE img IS NULL AND repertoire IS TRUE;
+	UPDATE core.fichier SET img = 'file.png' WHERE img IS NULL AND repertoire IS NOT TRUE;
+	RETURN NEW;
+END
+$func$;
+
+DROP TRIGGER IF EXISTS definir_icone_defaut ON core.fichier;
+
+CREATE CONSTRAINT TRIGGER definir_icone_defaut
+AFTER INSERT OR UPDATE ON core.fichier
+FOR EACH ROW EXECUTE PROCEDURE icone_defaut();
+
+
+ALTER TABLE core.fichier ALTER COLUMN repertoire SET NOT NULL;
 
 COMMIT ;
