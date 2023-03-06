@@ -6,6 +6,5 @@ class taskbarZone extends jZone {
 
    protected function _prepareTpl(){
        $this->_tpl->assignZone('DEMARRER','core~demarrer');
-       $this->_tpl->assign('heure',date('h:i'));
    }
 }

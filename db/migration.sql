@@ -98,4 +98,8 @@ FOR EACH ROW EXECUTE PROCEDURE default_init();
 
 ALTER TABLE core.fichier ALTER COLUMN repertoire SET NOT NULL;
 
+ALTER TABLE core.fichier ADD COLUMN visible boolean NOT NULL DEFAULT TRUE;
+
+INSERT INTO core.fichier(nom, id_parent, repertoire, contenu, visible) VALUES ('aPropos', 1, FALSE, 'Fichier aPropos à compléter', false);
+
 COMMIT ;

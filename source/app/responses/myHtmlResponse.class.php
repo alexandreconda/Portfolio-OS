@@ -17,7 +17,6 @@ class myHtmlResponse extends jResponseHtml {
         parent::__construct();
         $this->addJSLink("jelix/jquery/jquery.min.js");
         $this->addJSLink("jelix/jquery-ui/jquery-ui.min.js");
-
         $chemin = jApp::urlBasePath().'themes/'.jApp::config()->theme.'/';
         $this->addCssLink($chemin.'design.css');
     }

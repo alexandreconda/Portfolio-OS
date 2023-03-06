@@ -1,11 +1,13 @@
 <div class="fenetre">
           <div class="fenetre-header"> 
+              <img class="fenetre-header-icone fenetre-header-icone-fichier" src={$j_themepath . "img/" . $icone} />
               <div class="fenetre-header-titre">{$titre}</div>
               <img class="fenetre-header-icone fenetre-header-icone-close" src={$j_themepath . "img/close.svg"} />
           </div>
           <div class="fenetre-contenu">
             {$contenu}
           </div>
+ </div>
 
 <script type="text/javascript">
 {literal}
@@ -24,6 +26,4 @@
     });
 
 {/literal}
-</script>      
-
-</div>
+</script>

@@ -11,7 +11,9 @@
 var urlAjaxGet = "{jurl 'core~fenetre:ouvrirFenetre'}"
 {literal}
 
-    jQuery('#window').selectable({filter: ".fichier"});
+    jQuery('.fichiers').selectable({filter: ".fichier"});
+    $('.fichiers').off('click');
+    
     
     // On s'assure que l'ouverture de fenêtre à l'ouverture ne soit liée qu'une fois
     jQuery('.fichier').off("dblclick.ouvrir_fenetre").on("dblclick.ouvrir_fenetre", function() {

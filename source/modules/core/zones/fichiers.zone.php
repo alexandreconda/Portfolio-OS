@@ -16,7 +16,7 @@ class fichiersZone extends jZone {
        $query = $db->query("
             SELECT id, nom, img
             FROM core.fichier
-            WHERE id IN (" . $ids . ")
+            WHERE id IN (" . $ids . ") AND visible IS TRUE
             ORDER BY repertoire DESC, nom
         ");
        

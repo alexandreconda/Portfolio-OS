@@ -24,35 +24,19 @@ class fenetreCtrl extends jController {
         
         $db = jDb::getConnection();
         $query = $db->query("
-            SELECT nom, repertoire, contenu, ids_enfants
+            SELECT nom, repertoire, contenu, ids_enfants, img
             FROM core.fichier
             WHERE id = $fid
         ");
         while ($record = $query->fetch()) {
-            $fichier = array('nom' => $record->nom, 'repertoire' => $record->repertoire, 'contenu' => $record->contenu, 'ids_enfants' => $record->ids_enfants);
+            $fichier = array('nom' => $record->nom, 'repertoire' => $record->repertoire, 'contenu' => $record->contenu, 'ids_enfants' => $record->ids_enfants, 'img' => $record->img);
         }
-        
 
         $rep->tplname = 'core~fenetre';
-        
         $rep->tpl->assign('titre', $fichier['nom']);
-        
-        if ($fichier['repertoire'] == 'f')
-        {
-            $rep->tpl->assign('contenu', $fichier['contenu']);
-        }
-        else if ($fichier['repertoire'] == 't')
-        {
-            // On convertit un tableau Postgre de la forme {n1,n2,n3} sous la forme d'un tableau PHP de la forme array(n1,n2,n3)
-            $php_ids = explode(",", (trim($fichier['ids_enfants'], "{}")));
-            
-            jLog::log($php_ids);
-            $rep->tpl->assignZone('contenu','core~fichiers', array('ids' => $php_ids));
-        }
-        else {
-            throw new Exception('Type de fichier indéfini');
-        }
-        
+        $rep->tpl->assign('icone', $fichier['img']);
+        $rep->tpl->assignZone('contenu', 'core~fichier', array('id_fichier' => $fid));
+
         return $rep;
     }
     
