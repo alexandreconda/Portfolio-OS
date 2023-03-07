@@ -6,7 +6,7 @@
         <div class="account-image-wrapper">
           <img src={$j_themepath . "img/" . $icone}>
         </div>
-        <h1 class="account-name">Alexandre Condamine</h1>
+        <h1 class="account-name">- Portfolio OS - <br/> Alexandre Condamine</h1>
       </div>
       <div class="demarrer-body">
         <div class="demarrer-content">

@@ -17,6 +17,7 @@ html, body {
 	filter: invert(1);
 }
 
+
 #window {
 	position: fixed;
     left: 0;
@@ -61,8 +62,8 @@ html, body {
 .fenetre {
   margin: 0;
   position: absolute;
-  top: 20%;
-  left: 20%;
+  top: 10%;
+  left: 10%;
   width: 60%;
   min-width: 300px;
   height: fit-content;
@@ -74,6 +75,7 @@ html, body {
   border-top-right-radius: 8px;
   border: 1px solid #000000;
   background: #FFFFFF;
+  z-index: 0;
 }
 
 .fenetre-header {
@@ -130,6 +132,7 @@ html, body {
 .fichiers {
     width: 100%;
     height: 100%;
+    position: absolute;
 }
 
 .fichier {
@@ -144,7 +147,8 @@ html, body {
   max-width:100%;
   display: block;
   margin-left: auto;
-  margin-right: auto
+  margin-right: auto;
+  padding: 4px;
 }
 
 .label {
