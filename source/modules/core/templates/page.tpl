@@ -10,7 +10,7 @@
 {literal}
 var audio = jQuery('#startup_audio')[0]
 jQuery('#screen').click(function() {
-    audio.play();
+    // audio.play(); Désactivé temporairement car fait planter certains navigateurs
 });
 
 audio.addEventListener('ended', function(){

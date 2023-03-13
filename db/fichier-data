@@ -1,0 +1,125 @@
+53,aPropos,1,f,"Alexandre CONDAMINE
+07 82 78 21 26
+alexandre.condamine@outlook.fr
+
+Le code source du projet est disponible sur <a target=”_blank” href='"https://github.com/alexandreconda/Portfolio-OS'">ce dépôt Github</a>.
+Celui-ci est soumis à une <a target=”_blank” rel='"license'" href='"http://creativecommons.org/licenses/by/4.0/'">Creative Commons Attribution 4.0 International License</a>.
+
+<a target=”_blank” rel='"license'" href='"http://creativecommons.org/licenses/by/4.0/'"><img alt='"Creative Commons License'" style='"border-width:0'" src='"https://i.creativecommons.org/l/by/4.0/88x31.png'" /></a>",,customIcons/profil.jpg,f
+55,SOLUTEC,5,f,A compléter,,customIcons/solutec.png,t
+7,MU,5,f,"<h1>STAGIAIRE DEVELOPPEUR BACKEND
+MU
+2019 (10 semaines)</h1>
+<p>MU est une start-up spécialisée dans les objets connectés. Leur principale solution est un boitier pour motos
+doté notamment de fonctionnalité de pistométrie et de contact des secours en cas de chute.
+Le code de cette solution, en développement depuis 3 ans au moment du stage, présente un certain nombre
+de défauts (absence de logs, de tests, structure mal bâtie) que j’ai corrigés dans le cadre de mon stage.
+</p>
+<ul><li>Mise en place d’un système de logs</li>
+	<ul>
+		<li>Configuration des logs Laravel.</li>
+		<li>Mise en place de logs dans différentes parties du code pour identifier les origines des différents dysfonctionnements</li>
+	</ul>
+<li>Test du code</li>
+	<ul>
+		<li>Rédaction de tests unitaires sur une partie des méthodes du code. Couverture de tests unitaires d’environ 50% à la fin du stage</li>
+		<li>Correction des bugs là où les tests échouent</li>
+	</ul>
+
+<li>Réagencement du code</li>
+	<ul>
+		<li>Centralisation de certaines portions redondantes du code à l’aide de middlewares</li>
+		<li>Découpage de classes et méthodes monolithiques pour une meilleure modularité du code</li>
+	</ul>
+</ul>",,customIcons/MU.jpg,t
+15,Lycée Albert Triboulet,11,f,"Baccalauréat scientifique mention Bien
+Spécialité Informatique et Sciences du numérique
+Lycée Albert Triboulet, Romans-sur-Isère
+2016",,customIcons/ara.jpg,t
+5,Expériences,1,t,,"{9,7,6,55}",directory.png,t
+1,racine,,t,,"{24,11,19,25,31,29,34,30,21,3,17,52,28,22,20,32,53,33,13,5,18,26,27,23}",directory.png,t
+16,IUT de Rodez,11,f,"Diplôme Universitaire Technologique en Informatique
+IUT de Rodez, Rodez
+Bac +2
+2019",,customIcons/iutRodez.svg,t
+57,Langages,13,f,"<ul><li>PHP (Jelix, Laravel)</li>
+<li>JavaScript (jQuery)</li>
+<li>Postgre SQL</li>
+<li>HTML</li>
+<li>CSS</li>
+<li>Java</li>
+<li>C</li>
+<li>Bash</li>
+</ul>
+",,customIcons/dev.svg,t
+54,ENSEEIHT,11,f,"Diplôme d’Ingénieur en Informatique.
+ENSEEIHT, Toulouse
+Bac +5 
+2022",,customIcons/n7.ico,t
+56,Systèmes d'exploitation,13,f,"<ul><li>Windows</li>
+<li>Linux</li>
+</ul>",,customIcons/os.svg,t
+59,Langues,13,f,"<ul><li>Anglais - Niveau avance (Certification C1 Linguaskill)</li>
+<li>Allemand : Niveau intermédiaire (mobilité de 3 mois en Allemagne)</li>
+</ul>",,customIcons/langues.svg,t
+58,Outils,13,f,"<ul><li>Git</li>
+<li>Github</li>
+<li>SVN</li>
+<li>Eclipse</li>
+<li>Visual Studio</li>
+<li>Docker</li>
+<li>Redmine</li>
+</ul>",,customIcons/tools.svg,t
+13,Compétences,1,t,,"{56,58,57,59}",directory.png,t
+6,Vidéo 3/4,5,f,"<h1>DÉVELOPPEUR WEB FULL STACK PAR ALTERNANCE
+Vidéo 3/4 
+2019-2022 (3 ans)</h1>
+Vidéo ¾ est un organisme de formation mandaté par des acteurs tels que Pôle Emploi ou la Région Occitanie pour aider à l’insertion sociale et professionnelle des demandeurs d’emploi. 
+La gestion administrative des accompagnements proposé par Vidéo ¾ est basée sur une solution web nommée Extranet, en place depuis une dizaine d’années.  
+ 
+<ul>
+	<li>Développement de l’Extranet </li>
+	<ul>
+
+		<li>Intégration de l’API de sondage LimeSurvey. Modification de l’API permettant de filtrer les participations au sondage. Ajout de filtres côté Extranet (dispositif de formation, date 		d’accompagnement, formateur référent...) permettant de sélectionner une partie seulement des participations</li>
+
+		<li>Intégration de l’API Chorus. Génération de factures au standard européen Factur-x (PDF et XML) à partir des données du système d’informations de Vidéo ¾. Mise en place d’une interface permettant l’export de ces factures vers la plateforme Chorus</li> 
+
+		<li>Mise en place de formulaires de suivi des prestations conformément aux exigences métiers de chaque dispositif de formation proposé par la société</li>
+
+		<li>Implémentation d''interfaces de visualisations et d’éditions de données (CRUD) reposant sur jQCrud. Association de filtres jQuery</li>
+
+	 
+	</ul>
+	<li>Support technique </li>
+	<ul>
+
+		<li>Requêtes SQL ponctuelles à des fins statistiques</li>
+
+		<li>Assistance technique des collaborateurs (problèmes relatifs à l’extranet, difficultés informatiques diverses) </li>
+
+		<li>Relation permanente avec les utilisateurs finaux des solutions développés </li>
+
+		<li>Correctifs réguliers (bugs, problèmes sémantiques, évolution des exigences métier) </li>
+
+	 
+	</ul>
+	<li>Développement en autonomie d’une solution web « from scratch » à destination des bénéficiaires des prestations dans le cadre du projet de fin d’études </li>
+	<ul>
+		<li>Recueil des besoins</li>
+
+		<li>Rédaction de la spécification technique </li>
+
+		<li>Choix des technologies </li>
+
+		<li>Mise en place des environnements de développement, de test et de production (configuration des serveurs apaches, créations des bases de données, édition de fichiers Docker) </li>
+
+		<li>Rédaction d’un CSS responsive conforme à une charte graphique </li>
+
+		<li>Création de la structure du site (division en zones Jelix, chargement AJAX des pages) </li>
+	</ul>
+</ul>
+ 
+
+",,customIcons/videoTroisQuart.ico,t
+11,Etudes,1,t,,"{42,36,54,51,50,41,49,46,40,47,43,37,35,45,38,16,15,48,39,44}",directory.png,t

@@ -27,7 +27,7 @@ INSERT INTO core.fichier(nom, repertoire) VALUES ('racine', TRUE);
 
 -- On évite la recursivité dans l'arborescence des fichiers
 ALTER TABLE core.fichier
-ADD CONSTRAINT check_not_recursive CHECK (NOT(id_parent = ANY (ids_enfants::int[])))
+ADD CONSTRAINT check_not_recursive CHECK (NOT(id_parent = ANY (ids_enfants::int[])));
 
 -- On évite les cycles dans l'arborescence des fichiers
 CREATE OR REPLACE FUNCTION detecter_cycle()
